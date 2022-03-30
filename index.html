@@ -9,30 +9,31 @@
         <h1>Трандобуло Александр Викторович</h1>
         <img class="frontimg" src="content/Front-img.jpg">
         <div class="contbox">
-            <div><img src="content/ico/phone-ico.svg"></div><div ><a href="tel:+380938190948">+380938190948</a></div>
-            <div><img src="content/ico/email-ico.svg"></div><div ><a href="mailto:trandobulo@gmail.com">trandobulo@gmail.com</a></div>
-            <div><img src="content/ico/instagram-ico.svg"></div><div ><a href="http://instagram.com/trand.alexandr" target="_blank">@trand.alexandr</a></div>
+            <div class="icocontbox"><img src="content/ico/phone-ico.svg"></div><div ><a href="tel:+380938190948">+380938190948</a></div>
+            <div class="icocontbox"><img src="content/ico/email-ico.svg"></div><div ><a href="mailto:trandobulo@gmail.com">trandobulo@gmail.com</a></div>
+            <div class="icocontbox"><img src="content/ico/instagram-ico.svg"></div><div ><a href="http://instagram.com/trand.alexandr" target="_blank">@trand.alexandr</a></div>
         </div>
         <div class="contform">
-            <form>
+            <form name="form">
                 <fieldset>
-                    <legend><strong>Форма обратной связи</strong></legend>
+                    <legend><b>Форма обратной связи</b></legend>
                         <p>
                         <label for="name"><span>Ваши ФИО:</span></label>
                         <input type="text" id="name" name="name">
                         </p>
                         <p>
                         <label for="phone"><span>Ваш телефон:</span></label>
-                        <input type="tel" id="phone" name="phone">
+                        <input type="tel" id="phone" name="phone" placeholder="+38 (097) 123-45-67">
                         </p>
                         <p>
                         <label for="msg"><span>Ваше сообщение:</span></label>
                         <textarea type="text" id="msg" name="msg" rows="10" cols="40"></textarea>
                         </p>
-                        <p><button class="formbutton" type="submit">Отправить</button></p>
+                        <p><button class="formbutton" type="submit" onclick="print();">Отправить</button></p>
                 </fieldset>
                 </form>
         </div>
     </div>
+    <script src="script.js"></script>
     </body>
 </html>

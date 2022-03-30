@@ -11,29 +11,35 @@ h1 {
     color: #666666;
     font-size: 28;
 }
-strong {
+legend {
     color: #666666;
 }
+fieldset {
+    box-sizing: border-box;
+    border-radius: 10px;
+    width: 500px;
+}
 .contbox {
+    box-sizing: border-box;
     margin-top: 10px;
     margin-left: auto;
     margin-right: auto;
-    width: 220px;
+    width: 230px;
     display: flex;
     flex-wrap: wrap;
     padding: 10px ;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2), 0 4px 6px rgba(0,0,0,0.2);
+    border: solid 1px;
     border-radius: 10px;
 }
 .contbox > div {
     margin-top: 5px;
-    text-align: right;
 }
-.contbox > div > img {
-    width: 20px;  
+.icocontbox > img {
+    width: 20px;
 }
 .contbox > div > a {
-    width: 200px;
+    width: 170px;
+    padding-left: 10px;
 }
 a {
     color: black;
@@ -60,11 +66,15 @@ input, textarea {
     width: 250px;
     box-sizing: border-box;
     border: 1px solid #999;
+    resize: none;
 }
 label span {
     display: inline-block;
     text-align: right;
     width: 150px;
+}
+label {
+    vertical-align: top;
 }
 .formbutton {
     margin-left: 20px;
