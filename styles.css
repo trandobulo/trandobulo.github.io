@@ -11,17 +11,32 @@ h1 {
     color: #666666;
     font-size: 28;
 }
-legend {
-    color: #666666;
+label {
+    vertical-align: top;
 }
-fieldset {
-    box-sizing: border-box;
+a {
+    color: black;
+    display: inline-block;
+}
+a:hover {
+    text-decoration: underline;
+    color: brown;
+}
+a:visited {
+    color: brown;
+}
+input:invalid {
+    border-color: lightcoral;
+}
+.frontimg {
+    margin-top: 10px;
     border-radius: 10px;
     width: 500px;
+    height: 500px;
 }
 .contbox {
     box-sizing: border-box;
-    margin-top: 10px;
+    margin-top: 20px;
     margin-left: auto;
     margin-right: auto;
     width: 230px;
@@ -41,41 +56,38 @@ fieldset {
     width: 170px;
     padding-left: 10px;
 }
-a {
-    color: black;
-    display: inline-block;
+.contform {
+    margin-top: 20px;
 }
-a:hover {
-    text-decoration: underline;
-    color: brown;
+.framename {
+    color: #666666;
+    font-weight: bold;
 }
-a:visited {
-    color: brown;
-}
-.frontimg {
-    margin-top: 10px;
+.feedbackfield {
+    box-sizing: border-box;
     border-radius: 10px;
     width: 500px;
-    height: 500px;
 }
-.contform {
-    margin: 30px;
+.feedbackfield >*{
+    margin: 5px;
 }
-input, textarea {
+.feedbacklabel {
+    display: inline-block;
+}
+.feedbacklabel span {
+    display: inline-block;
+    text-align: right;
+    width: 150px;
+}
+.feedbackinput {
+    display: inline-block;
     font: sans-serif;
     width: 250px;
     box-sizing: border-box;
     border: 1px solid #999;
     resize: none;
 }
-label span {
-    display: inline-block;
-    text-align: right;
-    width: 150px;
-}
-label {
-    vertical-align: top;
-}
 .formbutton {
-    margin-left: 20px;
+    margin: 0 auto;
+    display: block;
 }

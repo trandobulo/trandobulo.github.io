@@ -14,22 +14,16 @@
             <div class="icocontbox"><img src="content/ico/instagram-ico.svg"></div><div ><a href="http://instagram.com/trand.alexandr" target="_blank">@trand.alexandr</a></div>
         </div>
         <div class="contform">
-            <form name="form">
-                <fieldset>
-                    <legend><b>Форма обратной связи</b></legend>
-                        <p>
-                        <label for="name"><span>Ваши ФИО:</span></label>
-                        <input type="text" id="name" name="name">
-                        </p>
-                        <p>
-                        <label for="phone"><span>Ваш телефон:</span></label>
-                        <input type="tel" id="phone" name="phone" placeholder="+38 (097) 123-45-67">
-                        </p>
-                        <p>
-                        <label for="msg"><span>Ваше сообщение:</span></label>
-                        <textarea type="text" id="msg" name="msg" rows="10" cols="40"></textarea>
-                        </p>
-                        <p><button class="formbutton" type="submit" onclick="print();">Отправить</button></p>
+            <form id="feedbackform" onsubmit="sendForm()" >
+                <fieldset class="feedbackfield">
+                    <legend class="framename">Форма обратной связи</legend>
+                        <label class="feedbacklabel" for="name"><span>* Ваше имя:</span></label>
+                        <input class="feedbackinput" type="text" id="name" name="name" required>
+                        <label class="feedbacklabel" for="phone"><span>* Ваш телефон:</span></label>
+                        <input class="feedbackinput" type="tel" id="phone" name="phone" placeholder="+380971234567" required minlength="10" maxlength="13">
+                        <label class="feedbacklabel" for="msg"><span>Ваше сообщение:</span></label>
+                        <textarea class="feedbackinput" type="text" id="msg" name="msg" rows="10" cols="40"></textarea>
+                        <button class="formbutton" type="submit">Отправить</button>
                 </fieldset>
                 </form>
         </div>
