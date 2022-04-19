@@ -1,4 +1,4 @@
-<html>
+<!DOCTYPE html>
     <head>
         <meta charset="UTF-8">
         <title>Трандобуло Александр</title>
@@ -14,19 +14,37 @@
             <div class="icocontbox"><img src="content/ico/instagram-ico.svg"></div><div ><a href="http://instagram.com/trand.alexandr" target="_blank">@trand.alexandr</a></div>
         </div>
         <div class="contform">
-            <form id="feedbackform" onsubmit="sendForm()" >
+            <form id="feedbackform" onsubmit="confirmForm()">
                 <fieldset class="feedbackfield">
                     <legend class="framename">Форма обратной связи</legend>
                         <label class="feedbacklabel" for="name"><span>* Ваше имя:</span></label>
-                        <input class="feedbackinput" type="text" id="name" name="name" required>
+                        <input class="feedbackinput" type="text" id="name" name="name" required></input>
                         <label class="feedbacklabel" for="phone"><span>* Ваш телефон:</span></label>
-                        <input class="feedbackinput" type="tel" id="phone" name="phone" placeholder="+380971234567" required minlength="10" maxlength="13">
+                        <input class="feedbackinput" type="tel" id="phone" name="phone" placeholder="+380971234567" required minlength="10" maxlength="13"></input>
                         <label class="feedbacklabel" for="msg"><span>Ваше сообщение:</span></label>
                         <textarea class="feedbackinput" type="text" id="msg" name="msg" rows="10" cols="40"></textarea>
-                        <button class="formbutton" type="submit">Отправить</button>
+                        <div class="formbutton">
+                            <button id="formbutton" type="submit">Отправить</button>
+                            <button type="button" onclick="document.getElementById('dowloadbutton').click()">Загрузить текст</button>
+                            <input type="file" style="display:none" id="dowloadbutton" onchange="readFile(this)"></input>
+                            <button type="button" onclick="saveFile()">Сохранить текст</button>
+                        </div>
                 </fieldset>
-                </form>
+            </form>
         </div>
+        <div>
+            <form>
+                <fieldset class="feedbackfield" id="trainingform">
+                    <legend class="framename">Форма для записи на тренировку</legend>
+                        <label class="feedbacklabel" for="date"><span>Время записи:</span></label>
+                        <input type="datetime-local" id="date"></input>
+                        <input type="button" id="bookbutton" value="Записаться" onclick="present()"></input>
+                        </div>
+                </fieldset>
+            </form>
+        </div>
+                
+        
     </div>
     <script src="script.js"></script>
     </body>

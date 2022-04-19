@@ -89,5 +89,8 @@ input:invalid {
 }
 .formbutton {
     margin: 0 auto;
-    display: block;
+    text-align: center;
+}
+.counter {
+    text-align: center;
 }
