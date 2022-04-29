@@ -7,20 +7,20 @@ function confirmForm(){
 
     let date = '';
     if (counterBreakPoint == 1){
-        date = `Дата тренировки: ${chooseDate.toLocaleString('ru-Ru')}`
+        date = `<b>Дата тренировки:</b> ${chooseDate.toLocaleString('ru-Ru')}`
     }
 
     let info=
-    `Вы ввели следующие данные:
-
-    Ваше имя: ${feedbackform.name.value} 
-    Ваш телефон: ${feedbackform.phone.value} 
-    Ваше сообщение: ${feedbackform.msg.value} 
+    `<b>Вы ввели следующие данные:</b><br><br>
+    <b>Ваше имя:</b> ${feedbackform.name.value}<br>
+    <b>Ваш телефон:</b> ${feedbackform.phone.value}<br>
+    <b>Ваше сообщение:</b> ${feedbackform.msg.value}<br>
     ${date}
+    <br><br>
+    Отправить?`;
 
-Отправить?`;
-
-    if (confirm(info)){ sendForm(); } else { alert('Отправка отменена');}
+    popConfirm(info);
+    // if (confirm(info)){ sendForm(); } else { popAlert('Отправка отменена');}
 }
 
 function readFile(input){
@@ -40,7 +40,7 @@ function saveFile(){
     link.href = URL.createObjectURL(file);
 
     if (document.getElementById('msg').value == ''){
-        alert('Форма пустая')}
+        popAlert('Форма пустая')}
     else {link.click();
         URL.revokeObjectURL(link.href);
     }
@@ -71,7 +71,7 @@ function sendForm(){
 
     
 
-    let resp = fetch ('https://api.emailjs.com/api/v1.0/email/send', {
+    let resp = fetch ('https://api.emailjs.com/api/v1.0/email/sen', {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify(user)
@@ -80,7 +80,7 @@ function sendForm(){
     
     .then(function(response){
         if (!response.ok){
-            alert('Ошибка отправки. Обновите страницу и попробуйте еще раз')} 
+            popAlert('Ошибка отправки. Обновите страницу и попробуйте еще раз')} 
         else {
             postDone();
             }
@@ -89,7 +89,7 @@ function sendForm(){
 
     function postDone(){
     
-        alert("Ваши данные успешно отправлены");
+        popAlert("Ваши данные успешно отправлены");
         if (counterBreakPoint == 1){
             counter();
             setInterval (counter, 1000);
@@ -104,39 +104,34 @@ let currentDate;
 let chooseDate;
 
 let text;
-let time;
-
-let msPerDay = 24*60*60*1000;
-let msPerHour = 60*60*1000;
-let msPerMinut = 60*1000;
+let timeLeft;
 
 function present(){
     if (counterBreakPoint == 0){
         currentDate = new Date();
         chooseDate = new Date(document.getElementById('date').value);
 
-        time = chooseDate - currentDate;
+        timeLeft = chooseDate - currentDate; 
 
         text = document.createElement('p');
         text.className = "counter";
 
             document.getElementById('trainingform').append(text);
 
-        //Проверка на наличие предыдущих вычислений
 
         if (chooseDate == 'Invalid Date'){
             
-            alert('Укажите дату и время для записи');
+            popAlert('Укажите дату и время для записи');
             return;
 
-            } else if (time < 0){
+            } else if (timeLeft < 0){
 
-            alert('Хорошая попытка, но в прошлое не вернуться');
+            popAlert('Хорошая попытка, но в прошлое не вернуться');
             return;
 
-            } else if (time < 12*msPerHour){
+            } else if (timeLeft < 12*60*60*1000){
 
-            alert("Можно выбрать время не раньше, чем через 12 часов с текущего момента");
+            popAlert("Можно выбрать время не раньше, чем через 12 часов с текущего момента");
             return;
         }
 
@@ -144,30 +139,71 @@ function present(){
 
         document.getElementById('formbutton').click();
     } else {
-       alert (`У вас уже есть запись на ${chooseDate.toLocaleString('ru-Ru')}`);
+       popAlert (`У вас уже есть запись на ${chooseDate.toLocaleString('ru-Ru')}`);
     }
 }
 
 function counter(){
 
-    let days = 0;
-    time >= msPerDay ? days = Math.trunc(time/msPerDay) : days = 0;
-
-    let hours = 0;
-    let hoursleft = time - days*msPerDay;
-    hoursleft >= msPerHour ? hours = Math.trunc(hoursleft/msPerHour) : hours = 0;
-
-    let minutes = 0;
-    let minutesleft = time - days*msPerDay - hours*msPerHour;
-    minutesleft >= msPerMinut ? minutes = Math.trunc(minutesleft/msPerMinut) : minutes = 0;
-
-    let seconds = 0;
-    let secondsleft = time - days*msPerDay - hours*msPerHour - minutes*msPerMinut;
-    secondsleft >= 1000 ? seconds = Math.trunc((secondsleft)/1000) : seconds = 0;
-
     text.innerHTML = `&#9989; Запись прошла успешно!<br>
-    До тренировки осталось <b> ${days} дн. ${hours} ч. ${minutes} мин. ${seconds} сек. </b>`;
+    До тренировки осталось <b>${moment.duration(timeLeft).format("d дн. h ч. m мин. s сек.")}</b>`;
 
+    timeLeft -= 1000;
+}
 
-    time -= 1000;
+function popAlert(massage){
+
+    clear();
+
+    $('.textPopAlert').html("&#9888; " + massage);
+    $(".popAlert").show().animate({top: '20px'}, hide);
+    
+    function hide(){
+
+        function popOut(){
+            $('.popAlert').fadeOut('slow', clear)
+        }
+
+        let timerPopUp;
+
+        return timerPopUp = setTimeout(popOut, 5000);
+    }
+
+    function clear(){
+        $('.popAlert').hide().css({"top":"0px"});
+    }
+}
+
+function popConfirm(massage){
+
+    $(".popConfirm").show().animate({top: '20px'});
+
+    $('.textPopConfirm').html(massage);
+    $('.popConfirm').show();
+    
+    $("#cansel").click(hidequik);
+    $("#ok").click(hide)
+
+    function hide(){
+
+        popOut();
+
+        function popOut(){
+
+            $('.popConfirm').fadeOut('slow', clear);
+        }
+        
+        function clear(){
+            $('.popConfirm').hide().css({"top":"0px"})
+        }
+    }
+
+    function hidequik(){
+
+        clear();
+        
+        function clear(){
+            $('.popConfirm').hide().css({"top":"0px"})
+        }
+    }
 }

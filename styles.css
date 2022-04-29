@@ -94,3 +94,50 @@ input:invalid {
 .counter {
     text-align: center;
 }
+
+.popAlert{
+    position: fixed;
+    display: none;
+    box-sizing: border-box;
+    width: 300px;
+    height: auto;
+    top: 0px;
+    right: 20px;
+    border-radius: 10px;
+    background-color: rgb(228, 198, 188);
+    text-align: center;
+    padding: 10px;
+    z-index: 100;
+    
+}
+
+.textPopAlert{
+    margin: 0px;
+}
+
+.popConfirm{
+    position: fixed;
+    display: none;
+    box-sizing: border-box;
+    width: 300px;
+    height: auto;
+    top: 0px;
+    right: 20px;
+    border-radius: 10px;
+    background-color: rgb(193, 228, 188);
+    text-align: center;
+    padding: 10px;
+    z-index: 101;
+}
+
+.popConfirm > p{
+    text-align: left;
+    overflow-wrap: break-word;
+}
+
+.popConfirmButton{
+    width: 80px;
+    background-color: lightblue;
+    border-radius: 4px;
+}
+
