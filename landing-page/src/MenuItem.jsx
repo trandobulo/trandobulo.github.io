@@ -1,6 +1,6 @@
 function MenuItem(props){
     return(
-        <a className="menuItem">
+        <a className="menuItem" href={props.href} >
             {props.name}
         </a>
     )

@@ -8,23 +8,76 @@ body {
   box-sizing: border-box;
 }
 
+a {
+color: #ffffff;
+text-decoration: none;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
 
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  text-align: center;
+  color: #ffffff;
+  height: 750px;
+  background-image: url('/src/ph.jpg');
+  background-size:cover;
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-attachment: scroll ;
+}
+
+.header:after {
+  content: "";
+  position: absolute;
+  height: 750px;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 1;
+}
+
+.headerMid{
+  z-index: 2;
+}
+
+#textTyping{
+  font-weight: 400;
+}
+
+.navBar {
+  width: 100%;
+  color: #ffffff;
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  z-index: 2;
+}
+
 .menu{
   display: flex;
-  flex-direction: row;
-  position: fixed;
   right: 10%;
   top: 0px;
   height: 70px;
   align-items: center;
+  margin-right: 10%;
 }
 
 .menuItem{
-  padding-left: 20px;
+  padding-left: 30px;
+}
+
+.menuItem:active:after{
+  content: '';
+  margin-top: 5px;
+  display: block;
+  width: auto;
+  height: 4px;
+  background-color: #F3843D;
 }
 
 .menuItem:hover{
@@ -33,9 +86,7 @@ code {
 
 .logo{
   display: flex;
-  flex-direction: row;
-  position: fixed;
-  left: 20px;
+  margin-left: 5%;
   top: 0px;
   height: 70px;
   align-items: center;
@@ -44,4 +95,44 @@ code {
 .logo > h2{
   margin: 0px;
   padding-bottom: 5px;
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 600;
+}
+
+.about{
+  height: 600px;
+  background-color: antiquewhite;
+}
+
+.button{
+  margin: 10px;
+  font-weight: 600;
+  border-radius: 30px;
+  padding: 8px 28px;
+  border-color: #F3843D;
+  background-color: #ffffff;
+  color: #F3843D;
+  transition: 0.8s;
+  border-style: solid;
+}
+
+.button:hover{
+  background-color: #F3843D;
+  color: #FFFFFF;
+  transition: 0.5s;
+}
+
+.secondButton{
+  background-color: #F3843D;
+  color: #FFFFFF;
+  transition: 0.5s;
+}
+.secondButton:hover {
+  background-color: #FFFFFF;
+  color: #F3843D;
+  transition: 0.5s;
+}
+
+.btnIcon{
+  margin-left: 5px;
 }
