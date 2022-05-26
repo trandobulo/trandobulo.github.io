@@ -4,8 +4,10 @@ import Typed from 'react-typed';
 function HeaderMid(){
 
   const textLines = [
-    'Junior Frontend Developer ',
+    'Junior Frontend Developer',
     'Photography',
+
+
   ];
 
   return(
