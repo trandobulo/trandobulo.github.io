@@ -4,8 +4,9 @@ import Typed from 'react-typed';
 function HeaderMid(){
 
   const textLines = [
-    'Junior Frontend Developer ',
-    'Photografy',
+    'Junior Frontend Developer',
+    'Photography',
+
   ];
   
   const App = () => (
