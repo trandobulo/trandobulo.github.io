@@ -12,8 +12,8 @@ root.render(
   <React.StrictMode>
     <Header />
     <section className='about' id="about">
-    <Button className="button" />
-    <Button className="button secondButton" icon={faPaperPlane}/>
+    <Button className="button" label='Secondary Button'/>
+    <Button className="button" label='Primary Button' type='primaryButton' icon={faPaperPlane}/>
     </section>
   </React.StrictMode>
 );

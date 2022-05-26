@@ -122,12 +122,12 @@ code {
   transition: 0.5s;
 }
 
-.secondButton{
+.primaryButton{
   background-color: #F3843D;
   color: #FFFFFF;
   transition: 0.5s;
 }
-.secondButton:hover {
+.primaryButton:hover {
   background-color: #FFFFFF;
   color: #F3843D;
   transition: 0.5s;
