@@ -3,24 +3,21 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 function Button(props){
 
-    let btnClass;
+    let btnClass = 'button ';
 
-    if(props.type){btnClass = props.className+' '+props.type} else {btnClass = props.className}
-
-    if (props.icon){
-
-        const icon = <FontAwesomeIcon className='btnIcon' icon={props.icon} />
-
-        return(
-            <button className={btnClass}>
-            {props.label} {icon}
-            </button>
-        )
+    switch(props.type){
+        case 'secondary':
+            btnClass += "secondaryButton";
+            break;
+        case 'primary':
+            btnClass += "primaryButton";
+            break;
+        default: ;
     }
 
     return(
         <button className={btnClass} >
-        {props.label}
+        {props.label}{props.icon && <FontAwesomeIcon className='btnIcon' icon={props.icon} />}
         </button>
     )
 }

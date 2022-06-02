@@ -25,7 +25,7 @@ code {
   text-align: center;
   color: #ffffff;
   height: 750px;
-  background-image: url('/src/ph.jpg');
+  background-image: url('/src/content/ph.jpg');
   background-size:cover;
   background-position: 50%;
   background-repeat: no-repeat;
@@ -99,13 +99,8 @@ code {
   font-weight: 600;
 }
 
-.about{
-  height: 600px;
-  background-color: antiquewhite;
-}
-
-.button{
-  margin: 10px;
+.button, .secondaryButton{
+  margin-right: 20px;
   font-weight: 600;
   border-radius: 30px;
   padding: 8px 28px;
@@ -116,7 +111,7 @@ code {
   border-style: solid;
 }
 
-.button:hover{
+.button:hover, .secondaryButton:hover{
   background-color: #F3843D;
   color: #FFFFFF;
   transition: 0.5s;
@@ -134,5 +129,70 @@ code {
 }
 
 .btnIcon{
-  margin-left: 5px;
+  margin-left: 10px;
+}
+
+.about{
+  margin: 100px 0px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.aboutFoto{
+  width: 30%;
+}
+
+.aboutInfo{
+  margin-left: 40px;
+  width: 50%;
+
+}
+
+.aboutInfo >  h2{
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, sans-serif;
+  font-weight: 500;
+  font-size: 30px;
+  letter-spacing: 1px;
+  margin-top: 0px;
+  padding-bottom: 15px;
+  display: inline-block;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.aboutInfo > h2::after{
+  display: block;
+  content: "";
+  position: relative;
+  bottom: -16px;
+  background: #F3843D;
+  width: 70px;
+  height: 1px;
+}
+
+.aboutDetails{
+  margin-top: 60px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.aboutDetails > p {
+  font-size: 16px;
+  width: 33%;
+}
+.aboutDetails > p > a {
+  text-decoration: none;
+  color: #000000;
+}
+
+.aboutDetails > p > a:hover{
+  color: #F3843D;
+}
+
+.aboutDetailsIcon{
+  margin-right: 5px;
+}
+
+.aboutButtons{
+  margin-top: 60px;
 }
