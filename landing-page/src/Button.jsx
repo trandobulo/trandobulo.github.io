@@ -5,14 +5,8 @@ function Button(props){
 
     let btnClass = 'button ';
 
-    switch(props.type){
-        case 'secondary':
-            btnClass += "secondaryButton";
-            break;
-        case 'primary':
-            btnClass += "primaryButton";
-            break;
-        default: ;
+    if (props.type === 'primary'){
+        btnClass += "primaryButton";
     }
 
     return(

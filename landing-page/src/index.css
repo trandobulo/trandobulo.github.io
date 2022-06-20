@@ -1,3 +1,8 @@
+@keyframes opacity {
+  from {opacity: 0%;}
+  to {opacity: 100%;}
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -25,7 +30,7 @@ code {
   text-align: center;
   color: #ffffff;
   height: 750px;
-  background-image: url('/src/content/ph.jpg');
+  background-image: url('/src/content/headerBackGoundImg.jpg');
   background-size:cover;
   background-position: 50%;
   background-repeat: no-repeat;
@@ -99,7 +104,7 @@ code {
   font-weight: 600;
 }
 
-.button, .secondaryButton{
+.button{
   margin-right: 20px;
   font-weight: 600;
   border-radius: 30px;
@@ -111,7 +116,7 @@ code {
   border-style: solid;
 }
 
-.button:hover, .secondaryButton:hover{
+.button:hover{
   background-color: #F3843D;
   color: #FFFFFF;
   transition: 0.5s;
@@ -149,7 +154,7 @@ code {
 
 }
 
-.aboutInfo >  h2{
+.thin {
   font-family:'Gill Sans', 'Gill Sans MT', Calibri, sans-serif;
   font-weight: 500;
   font-size: 30px;
@@ -160,7 +165,9 @@ code {
   border-bottom: 1px solid #e0e0e0;
 }
 
-.aboutInfo > h2::after{
+
+
+.thin::after{
   display: block;
   content: "";
   position: relative;
@@ -170,22 +177,22 @@ code {
   height: 1px;
 }
 
-.aboutDetails{
+.aboutDetails > div{
   margin-top: 60px;
   display: flex;
   flex-wrap: wrap;
 }
 
-.aboutDetails > p {
+.aboutDetails > div >p {
   font-size: 16px;
   width: 33%;
 }
-.aboutDetails > p > a {
+.aboutDetails > div > p > a {
   text-decoration: none;
   color: #000000;
 }
 
-.aboutDetails > p > a:hover{
+.aboutDetails > div > p > a:hover{
   color: #F3843D;
 }
 
@@ -195,4 +202,153 @@ code {
 
 .aboutButtons{
   margin-top: 60px;
+}
+
+.resume{
+display: flex;
+align-items: center;
+flex-direction: column;
+height: 700px;
+
+}
+
+.switcher {
+  display: flex;
+  margin: 30px 0px 40px 0px;
+}
+
+.tab{
+  height: 35px;
+  width: 150px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  background-color: #4B4E53;
+  color: #e0e0e0;
+}
+
+#tab-0{
+  border-radius: 20px 0px 0px 20px;
+}
+
+#tab-1{
+  border-radius: 0px 20px 20px 0px;
+}
+
+.active{
+  background-color: #3d4041;
+  color: #F3843D;
+}
+
+.tab label{
+  display: flex;
+  margin-top: 5px;
+  justify-content: center;
+}
+
+.content{
+  animation: opacity 0.7s ;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.resume > h2::after {
+  left: 40px;
+}
+
+.resumeIcon{
+  text-align: center;
+  border: 2px solid #C8C8C8;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.iconLine {
+  height: 50px;
+  width: 2px;
+  background-color: #C8C8C8;
+  margin: 0px 0px 5px 0px;
+}
+
+.resumeIcon > span{
+  font-size: 30px;
+}
+
+.contentBlock {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.left {
+ display: inherit;
+ flex-direction: row-reverse;
+ text-align: right;
+ justify-content: flex-start;
+}
+
+.period {
+  width: 400px;
+  display: flex;
+  justify-content: inherit;
+}
+
+.period span {
+  display: block;
+  width: 100px;
+  height: 30px;
+  background-color: #F3843D;
+  border-radius: 15px;
+  text-align: center;
+}
+
+.branch {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0px 10px 5px 10px;
+
+}
+
+.description {
+  width: 400px;
+}
+
+.description h4 {
+  margin: 0px;
+}
+
+.point {
+  width: 10px;
+  height: 10px;
+  border: 2px solid #F3843D;
+  border-radius: 8px;
+}
+
+.line {
+  margin-top: 5px;
+  height: 120px;
+  width: 2px;
+  background-color: #C8C8C8;
+}
+
+.skillsScale{
+  animation: opacity 0.7s ;
+ 
+}
+
+.progressBar {
+  width: 600px;
+  height: 10px;
+  background-color: #C8C8C8;
+  border-radius: 5px;
+}
+
+.progressBar > span {
+  display: block;
+  background-color: #F3843D;
+  height: inherit;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
 }
