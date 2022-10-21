@@ -1,0 +1,161 @@
+.contacts {
+  display: flex;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 40px 0px 100px;
+}
+
+.contactForm {
+  display: flex;
+  color: #f3843d;
+  flex-direction: column;
+  width: 30%;
+}
+
+.contactBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #14141450;
+  margin-left: 100px;
+  width: 30%;
+  height: 590px;
+  border: 1px solid #fafafa50;
+  min-width: 200px;
+}
+
+.formInput {
+  height: 30px;
+  background-color: #14141450;
+  border: 1px solid #fafafa50;
+  border-radius: 3px;
+  margin-bottom: 30px;
+  padding: 5px;
+  color: #fff;
+}
+
+.formInput:focus {
+  outline: none;
+  border-color: #f3843d;
+}
+
+.formMessage {
+  height: 100px;
+  resize: none;
+}
+
+.formButton {
+  background-color: #f3843d;
+  border: none;
+  height: 30px;
+  margin-bottom: 42px;
+  color: #fff;
+  font-weight: 600;
+  outline: none;
+  cursor: pointer;
+}
+
+.formButton:active {
+  background-color: #e56719;
+}
+
+.buttonDisabled {
+  background-color: #cbcbcb;
+}
+
+.contactIcon {
+  height: 35px;
+  width: 35px;
+  color: #f3843d;
+}
+
+.contactItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 5px 0px;
+}
+
+.contactItem > h4 {
+  margin-top: 10px;
+  margin-bottom: 0px;
+  color: #fff;
+}
+
+.messageSent {
+  animation: opacity 1s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #14141450;
+  width: 30%;
+  height: 200px;
+  border: 1px solid #fafafa50;
+}
+
+.rc-anchor-dark {
+  background-color: #14141450;
+}
+
+.messageSentIcon {
+  font-size: 60px;
+  color: #f3843d;
+}
+
+.lds-ellipsis {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+.lds-ellipsis div {
+  position: absolute;
+  top: 33px;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: #f3843d;
+  animation-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+.lds-ellipsis div:nth-child(1) {
+  left: 8px;
+  animation: lds-ellipsis1 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(2) {
+  left: 8px;
+  animation: lds-ellipsis2 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(3) {
+  left: 32px;
+  animation: lds-ellipsis2 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(4) {
+  left: 56px;
+  animation: lds-ellipsis3 0.6s infinite;
+}
+@keyframes lds-ellipsis1 {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes lds-ellipsis3 {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+@keyframes lds-ellipsis2 {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(24px, 0);
+  }
+}

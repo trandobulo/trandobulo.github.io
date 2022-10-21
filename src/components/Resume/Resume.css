@@ -1,0 +1,56 @@
+.resume {
+  padding: 100px 0px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.title {
+  font-weight: 500;
+  margin-top: 0px;
+  letter-spacing: 1px;
+  padding-bottom: 15px;
+  display: inline-block;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.title::after {
+  display: block;
+  content: '';
+  position: relative;
+  bottom: -16px;
+  background: #f3843d;
+  width: 70px;
+  height: 1px;
+}
+
+.switcher {
+  display: flex;
+  margin: 30px 0px 40px 0px;
+}
+
+.tab {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  height: 35px;
+  width: 150px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  background-color: #4b4e53;
+  color: #e0e0e0;
+}
+
+#tab-0 {
+  border-radius: 20px 0px 0px 20px;
+}
+
+#tab-1 {
+  border-radius: 0px 20px 20px 0px;
+}
+
+.active {
+  background-color: #3d4041;
+  color: #f3843d;
+}

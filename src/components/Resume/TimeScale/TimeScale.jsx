@@ -1,9 +1,9 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
-import {
-  faGraduationCap,
-  faBriefcaseBlank,
-} from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import PropTypes from 'prop-types';
+import { faGraduationCap } from '@fortawesome/free-solid-svg-icons';
+
+import './TimeScale.css';
 
 function MainIcon(props) {
   return (
@@ -15,23 +15,27 @@ function MainIcon(props) {
   );
 }
 
+MainIcon.propTypes = {
+  icon: PropTypes.string.isRequired,
+};
+
 const educationInfo = {
   icon: faGraduationCap,
   content: [
     {
-      period: '2007-2013',
-      title: 'Lorem ipsum dolor sit amet',
-      text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna cillum dolore eu fugiat aliqua.',
+      period: '2019',
+      title: 'Hillel IT School',
+      text: 'Project Management IT',
     },
     {
-      period: '2020',
-      title: 'Lorem ipsum dolor sit amet',
-      text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna cillum dolore eu fugiat aliqua.',
+      period: '2011-2013',
+      title: 'Odesa National Maritime University',
+      text: 'Information Control System and Technologies',
     },
     {
-      period: '2020',
-      title: 'Lorem ipsum dolor sit amet',
-      text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna cillum dolore eu fugiat aliqua.',
+      period: '2007-2011',
+      title: 'Odesa National Maritime University',
+      text: 'Computer Science',
     },
   ],
 };

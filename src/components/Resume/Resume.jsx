@@ -1,7 +1,9 @@
 /* eslint-disable react/prop-types */
 import React, { useState } from 'react';
-import TimeScale from './TimeScale';
-import SkillsScale from './SkillsScale';
+import TimeScale from './TimeScale/TimeScale';
+import SkillsScale from './SkillsScale/SkillsScale';
+
+import './Resume.css';
 
 function Resume() {
   const Tab = (props) => (
@@ -11,14 +13,14 @@ function Resume() {
       onClick={props.click}
       data-id={props.tab.dataid}
     >
-      <label>{props.tab.value}</label>
+      {props.tab.value}
     </div>
   );
 
-  const [state, setState] = useState({ activeTab: 0 });
+  const [state, setState] = useState({ activeTab: '0' });
 
   function Switcher(props) {
-    const tabs = [{ value: 'Education' }, { value: 'Skills' }];
+    const tabs = [{ value: 'Education' }, { value: 'Skills' }]; // {name: .. , component: ..} review all component
 
     return (
       <div className="switcher">
@@ -43,12 +45,23 @@ function Resume() {
     );
   }
 
+  const skills = [
+    { name: 'JavaScript', value: '50%' },
+    { name: 'TypeScript', value: '20%' },
+    { name: 'React', value: '40%' },
+    { name: 'Redux', value: '40%' },
+    { name: 'GraphQL', value: '10%' },
+    { name: 'HTML', value: '60%' },
+    { name: 'CSS', value: '60%' },
+    { name: 'Git', value: '40%' },
+  ];
+
   return (
-    <div className="resume">
-      <h2 className="thin">My Resume</h2>
+    <div className="resume" id="resume">
+      <h1 className="title">My Resume</h1>
       <Switcher state={state} />
-      {state.activeTab == 0 && <TimeScale />}
-      {state.activeTab == 1 && <SkillsScale />}
+      {state.activeTab === '0' && <TimeScale />}
+      {state.activeTab === '1' && <SkillsScale skills={skills} />}
     </div>
   );
 }
