@@ -1,0 +1,90 @@
+.content {
+  animation: opacity 0.7s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.resume > h2::after {
+  left: 40px;
+}
+
+.resumeIcon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #c8c8c8;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.iconLine {
+  height: 50px;
+  width: 2px;
+  background-color: #c8c8c8;
+  margin: 0px 0px 5px 0px;
+}
+
+.resumeIcon > span {
+  font-size: 30px;
+}
+
+.contentBlock {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.left {
+  display: inherit;
+  flex-direction: row-reverse;
+  text-align: right;
+  justify-content: flex-start;
+}
+
+.period {
+  width: 400px;
+  display: flex;
+  justify-content: inherit;
+}
+
+.period span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 30px;
+  color: #fff;
+  background-color: #f3843d;
+  border-radius: 15px;
+}
+
+.branch {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0px 10px 5px 10px;
+}
+
+.description {
+  width: 400px;
+}
+
+.description h4 {
+  margin: 0px;
+}
+
+.point {
+  width: 10px;
+  height: 10px;
+  border: 2px solid #f3843d;
+  border-radius: 8px;
+}
+
+.line {
+  margin-top: 5px;
+  height: 120px;
+  width: 2px;
+  background-color: #c8c8c8;
+}

@@ -1,0 +1,33 @@
+.button {
+  margin-right: 20px;
+  font-weight: 600;
+  border-radius: 30px;
+  padding: 8px 28px;
+  border-color: #f3843d;
+  background-color: #ffffff;
+  color: #f3843d;
+  transition: 0.8s;
+  border-style: solid;
+}
+
+.button:hover {
+  background-color: #f3843d;
+  color: #ffffff;
+  transition: 0.5s;
+}
+
+.primaryButton {
+  background-color: #f3843d;
+  color: #ffffff;
+  transition: 0.5s;
+}
+
+.primaryButton:hover {
+  background-color: #ffffff;
+  color: #f3843d;
+  transition: 0.5s;
+}
+
+.btnIcon {
+  margin-left: 10px;
+}

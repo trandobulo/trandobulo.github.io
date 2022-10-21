@@ -1,0 +1,18 @@
+.skillsScale {
+  animation: opacity 0.7s;
+}
+
+.progressBar {
+  width: 600px;
+  height: 10px;
+  background-color: #c8c8c8;
+  border-radius: 5px;
+}
+
+.progressBar > span {
+  display: block;
+  background-color: #f3843d;
+  height: inherit;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
