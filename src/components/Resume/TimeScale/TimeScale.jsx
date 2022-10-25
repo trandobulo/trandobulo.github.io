@@ -23,6 +23,11 @@ const educationInfo = {
   icon: faGraduationCap,
   content: [
     {
+      period: '2022 - present',
+      title: 'Studying with mentor',
+      text: 'Front-end development',
+    },
+    {
       period: '2019',
       title: 'Hillel IT School',
       text: 'Project Management IT',

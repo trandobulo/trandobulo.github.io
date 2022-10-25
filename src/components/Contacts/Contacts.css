@@ -60,7 +60,13 @@
   background-color: #e56719;
 }
 
-.buttonDisabled {
+.formButtonDisabled {
+  border: none;
+  height: 30px;
+  margin-bottom: 42px;
+  color: #fff;
+  font-weight: 600;
+  outline: none;
   background-color: #cbcbcb;
 }
 

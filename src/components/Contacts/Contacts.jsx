@@ -17,14 +17,14 @@ const ContactBox = () => {
       {[
         {
           icon: faPaperPlane,
-          title: 'Phone',
+          title: 'Telegram',
           text: (
             <a
               href="https://t.me/trand_olexandr"
               target="_blank"
               rel="noreferrer"
             >
-              +380938190948
+              @trand_olexandr
             </a>
           ),
         },
@@ -92,7 +92,7 @@ const ContactForm = () => {
   const form = useRef();
 
   const submitButtonClass = submitDisabled
-    ? 'formButton buttonDisabled'
+    ? 'formButtonDisabled'
     : 'formButton';
 
   const formTemplate = () => (

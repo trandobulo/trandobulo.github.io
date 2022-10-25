@@ -23,6 +23,7 @@
 .aboutDetails > div > p {
   font-size: 16px;
   width: 33%;
+  min-width: 220px;
 }
 
 .aboutDetailsIcon {

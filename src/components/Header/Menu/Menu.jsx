@@ -3,7 +3,7 @@ import './Menu.css';
 
 function Menu() {
   const [activeItem, setActiveItem] = useState('');
-  const menuItems = ['home', 'about', 'resume', 'contacts'];
+  const menuItems = ['home', 'about', 'resume', 'testimonials', 'contacts'];
 
   const underlineClass = (item) => {
     return activeItem === item ? 'underline underlineAnimated' : 'underline';

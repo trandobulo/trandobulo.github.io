@@ -1,0 +1,149 @@
+@keyframes apear {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes disapear {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 2;
+  }
+}
+
+.testimonialsBlock {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 500px;
+  margin-top: 100px;
+  background-image: url('/src/content/testimonialsBackGround.jpg');
+  background-color: rgba(0, 0, 0, 0.6);
+  background-size: cover;
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+}
+
+.testimonialsBlock:after {
+  content: '';
+  position: absolute;
+  height: 500px;
+  width: 100%;
+  backdrop-filter: blur(3px);
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 1;
+}
+
+.testimonialsBlock > h1 {
+  color: #fff;
+  z-index: 2;
+}
+
+.testimonialsListContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
+
+.testimonialsItemWrapper {
+  width: 800px;
+  height: 200px;
+  overflow: hidden;
+}
+
+.testimonialsItem {
+  display: none;
+  opacity: 0;
+  overflow: hidden;
+  box-sizing: border-box;
+  align-items: center;
+  width: 0px;
+  height: 200px;
+  padding: 0px 50px;
+  background-color: #fff;
+  border-radius: 30px;
+  animation: disapear 1s;
+}
+
+.activeTestimonialsItem {
+  display: flex;
+  opacity: 1;
+  overflow: hidden;
+  box-sizing: border-box;
+  align-items: center;
+  width: 800px;
+  height: 200px;
+  padding: 0px 50px;
+  background-color: #fff;
+  border-radius: 30px;
+  animation: apear 1.5s;
+}
+
+.testimonialsPhotoContainer {
+  background-color: #f3843d;
+  width: 100px;
+  min-width: 100px;
+  height: 100px;
+  overflow: hidden;
+  border-radius: 50px;
+}
+
+.testimonialsPhoto {
+  width: 100%;
+}
+
+.testimonialsTextContainer {
+  box-sizing: border-box;
+  width: fit-content;
+  height: fit-content;
+  padding-left: 50px;
+}
+
+.testimonialsText {
+  font-size: 14px;
+}
+
+.testimonialsAuthor {
+  display: block;
+  text-align: end;
+  font-weight: 600;
+  font-size: 16px;
+  margin-top: 10px;
+  text-transform: capitalize;
+}
+
+.navChevrone {
+  width: 30px;
+  height: 30px;
+  color: #fff;
+  margin: 0px 20px;
+}
+
+.navCirclesContainer {
+  display: flex;
+  z-index: 2;
+}
+
+.navCircle {
+  width: 10px;
+  height: 10px;
+  box-sizing: border-box;
+  border: 1px solid #fff;
+  border-radius: 6px;
+  margin: 20px 10px 0px 0px;
+}
+
+.activeNavCircle {
+  background-color: #f3843d;
+  border-color: #f3843d;
+}

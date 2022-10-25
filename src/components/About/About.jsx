@@ -41,11 +41,7 @@ const AboutDetails = () => {
     },
     {
       icon: faAt,
-      link: (
-        <a href="mailto: trandobulo@gmail.com" target="_blank" rel="noreferrer">
-          trandobulo@gmail.com
-        </a>
-      ),
+      link: <a href="mailto: trandobulo@gmail.com">trandobulo@gmail.com</a>,
     },
     {
       icon: faGraduationCap,
