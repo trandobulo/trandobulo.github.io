@@ -7,6 +7,8 @@
 
 .aboutFoto {
   width: 30%;
+  min-width: 350px;
+  max-width: 500px;
 }
 
 .aboutInfo {
@@ -14,19 +16,24 @@
   width: 50%;
 }
 
-.aboutDetails > div {
+.aboutInfoText {
+  text-align: justify;
+}
+
+.aboutInfoDetails {
   margin-top: 60px;
   display: flex;
   flex-wrap: wrap;
 }
 
-.aboutDetails > div > p {
+.aboutInfoDetailsItem {
+  padding: 10px 0px;
   font-size: 16px;
   width: 33%;
   min-width: 220px;
 }
 
-.aboutDetailsIcon {
+.aboutInfoDetailsIcon {
   margin-right: 5px;
 }
 

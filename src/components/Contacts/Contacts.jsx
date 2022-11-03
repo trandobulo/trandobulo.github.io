@@ -12,73 +12,75 @@ import ReCAPTCHA from 'react-google-recaptcha';
 import './Contacts.css';
 
 const ContactBox = () => {
+  const CONTACT_ITEMS = [
+    {
+      icon: faPaperPlane,
+      title: 'Telegram',
+      text: (
+        <a href="https://t.me/trand_olexandr" target="_blank" rel="noreferrer">
+          @trand_olexandr
+        </a>
+      ),
+    },
+    {
+      icon: faLinkedin,
+      title: 'LinkedIn',
+      text: (
+        <a
+          href="https://linkedin.com/in/trandobulo"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Oleksandr Trandobulo
+        </a>
+      ),
+    },
+    {
+      icon: faInstagram,
+      title: 'Instagramm',
+      text: (
+        <a
+          href="https://instagram.com/trand.oleksandr"
+          target="_blank"
+          rel="noreferrer"
+        >
+          @trand.oleksandr
+        </a>
+      ),
+    },
+    {
+      icon: faLocationDot,
+      title: 'Ukraine',
+      text: (
+        <a
+          href="https://goo.gl/maps/FWAbYhQYYGN8Epnm7"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Odessa
+        </a>
+      ),
+    },
+  ];
+
+  const renderContactItem = (item) => {
+    return (
+      <div key={item.title} className="contactItem">
+        <FontAwesomeIcon
+          className="contactIcon"
+          icon={item.icon}
+          key={item.title}
+        />
+        <h4>{item.title}</h4>
+        <p>{item.text}</p>
+      </div>
+    );
+  };
+
   return (
     <div className="contactBox">
-      {[
-        {
-          icon: faPaperPlane,
-          title: 'Telegram',
-          text: (
-            <a
-              href="https://t.me/trand_olexandr"
-              target="_blank"
-              rel="noreferrer"
-            >
-              @trand_olexandr
-            </a>
-          ),
-        },
-        {
-          icon: faLinkedin,
-          title: 'LinkedIn',
-          text: (
-            <a
-              href="https://linkedin.com/in/trandobulo"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Oleksandr Trandobulo
-            </a>
-          ),
-        },
-        {
-          icon: faInstagram,
-          title: 'Instagramm',
-          text: (
-            <a
-              href="https://instagram.com/trand.oleksandr"
-              target="_blank"
-              rel="noreferrer"
-            >
-              @trand.oleksandr
-            </a>
-          ),
-        },
-        {
-          icon: faLocationDot,
-          title: 'Ukraine',
-          text: (
-            <a
-              href="https://goo.gl/maps/FWAbYhQYYGN8Epnm7"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Odessa
-            </a>
-          ),
-        },
-      ].map((item) => {
-        return (
-          <div key={item.title} className="contactItem">
-            <FontAwesomeIcon
-              className="contactIcon"
-              icon={item.icon}
-              key={item.title}
-            />
-            <h4>{item.title}</h4>
-            <p>{item.text}</p>
-          </div>
-        );
+      {CONTACT_ITEMS.map((item) => {
+        return renderContactItem(item);
       })}
     </div>
   );
@@ -173,7 +175,7 @@ const ContactForm = () => {
 
   const loader = (
     <div className="messageSent">
-      <div className="lds-ellipsis">
+      <div className="loader">
         <div></div>
         <div></div>
         <div></div>

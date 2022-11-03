@@ -18,24 +18,28 @@ import './About.css';
 
 const AboutItem = (props) => {
   return (
-    <p>
-      <FontAwesomeIcon className="aboutDetailsIcon" icon={props.item.icon} />
+    <div className="aboutInfoDetailsItem">
+      <FontAwesomeIcon
+        className="aboutInfoDetailsIcon"
+        icon={props.item.icon}
+      />
       {props.item.link}
-    </p>
+    </div>
   );
 };
 
 const AboutDetails = () => {
-  const items = [
+  const ABOUT_DETAILS_ITEMS = [
     {
       icon: faLinkedin,
       link: (
         <a
+          className="capitalized"
           href="https://linkedin.com/in/trandobulo/"
           target="_blank"
           rel="noreferrer"
         >
-          Linkedin
+          linkedin
         </a>
       ),
     },
@@ -46,8 +50,13 @@ const AboutDetails = () => {
     {
       icon: faGraduationCap,
       link: (
-        <a href="https://onmu.odessa.ua" target="_blank" rel="noreferrer">
-          ONMU
+        <a
+          className="uppercased"
+          href="https://onmu.odessa.ua"
+          target="_blank"
+          rel="noreferrer"
+        >
+          onmu
         </a>
       ),
     },
@@ -55,11 +64,12 @@ const AboutDetails = () => {
       icon: faInstagram,
       link: (
         <a
+          className="capitalized"
           href="instagram.com//trand.oleksandr"
           target="_blank"
           rel="noreferrer"
         >
-          Instargam
+          instargam
         </a>
       ),
     },
@@ -75,25 +85,31 @@ const AboutDetails = () => {
       icon: faGithub,
       link: (
         <a
+          className="capitalized"
           href="https://github.com/trandobulo"
           target="_blank"
           rel="noreferrer"
         >
-          GitHub
+          github
         </a>
       ),
     },
   ];
 
-  let key = 0;
   return (
-    <div>
-      {items.map((x) => (
-        <AboutItem item={x} key={key++} />
-      ))}{' '}
+    <div className="aboutInfoDetails">
+      {ABOUT_DETAILS_ITEMS.map((item, index) => (
+        <AboutItem item={item} key={index} />
+      ))}
     </div>
   );
 };
+
+const ABOUT_TEXT = `I am an enthusiastic and detail-oriented beginner Front-end Developer,
+seeking an entry position in a company, to use and improve my skills
+in commercial project development. While studying I&apos;m trying to
+have a deep understanding of every new technology and am always highly
+motivated to solve the unfamiliar complex tasks`;
 
 function About() {
   return (
@@ -101,27 +117,15 @@ function About() {
       <img className="aboutFoto" src={aboutFoto} alt="author foto" />
       <div className="aboutInfo">
         <h1 className="title">More Info About Me</h1>
-        <p>
-          I am an enthusiastic and detail-oriented beginner Front-end Developer,
-          seeking an entry position in a company, to use and improve my skills
-          in commercial project development. While studying I&apos;m trying to
-          have a deep understanding of every new technology and am always highly
-          motivated to solve the unfamiliar complex tasks
-        </p>
-        <div className="aboutDetails">
-          <AboutDetails />
-        </div>
+        <p className="aboutInfoText">{ABOUT_TEXT}</p>
+        <AboutDetails />
         <div className="aboutButtons">
-          <a
-            href="https://drive.google.com/file/d/1m71Ha2z2gDrNQ7VPGYZdrhLPviKvfSlV/view?usp=sharing"
-            rel="noreferrer"
-            target="_blank"
-          >
-            <Button label="Download C.V." />
-          </a>
-          <a href="#contacts">
-            <Button label="Hire Me" type="primary" />
-          </a>
+          <Button
+            label="Download C.V."
+            link="https://drive.google.com/file/d/1m71Ha2z2gDrNQ7VPGYZdrhLPviKvfSlV/view?usp=sharing"
+            newTab={true}
+          />
+          <Button label="Hire Me" type="primary" link="#contacts" />
         </div>
       </div>
     </div>

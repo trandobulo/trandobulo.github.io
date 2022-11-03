@@ -1,28 +1,27 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import PropTypes from 'prop-types';
 
 import './Button.css';
 
 function Button(props) {
-  let btnClass = 'button ';
+  const btnClass = props.type === 'primary' ? 'button primaryButton' : 'button';
 
-  if (props.type === 'primary') {
-    btnClass += 'primaryButton';
-  }
-
-  return (
+  const button = (
     <button className={btnClass}>
       {props.label}
       {props.icon && <FontAwesomeIcon className="btnIcon" icon={props.icon} />}
     </button>
   );
-}
 
-Button.propTypes = {
-  type: PropTypes.string,
-  label: PropTypes.string.isRequired,
-  icon: PropTypes.string,
-};
+  const linkedButton = props.newTab ? (
+    <a href={props.link} rel="noreferrer" target="_blank">
+      {button}
+    </a>
+  ) : (
+    <a href={props.link}>{button}</a>
+  );
+
+  return linkedButton;
+}
 
 export default Button;

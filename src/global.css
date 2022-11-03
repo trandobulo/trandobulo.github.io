@@ -44,3 +44,11 @@ a:hover {
 .textOrange {
   color: #f3843d;
 }
+
+.capitalized {
+  text-transform: capitalize;
+}
+
+.uppercased {
+  text-transform: uppercase;
+}

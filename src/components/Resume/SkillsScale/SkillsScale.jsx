@@ -1,6 +1,5 @@
 import React from 'react';
 import './SkillsScale.css';
-import PropTypes from 'prop-types';
 
 const SkillsScale = (props) => {
   return (
@@ -15,10 +14,6 @@ const SkillsScale = (props) => {
       ))}
     </div>
   );
-};
-
-SkillsScale.propTypes = {
-  skills: PropTypes.array.isRequired,
 };
 
 export default SkillsScale;

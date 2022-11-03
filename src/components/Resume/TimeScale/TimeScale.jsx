@@ -1,6 +1,5 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import PropTypes from 'prop-types';
 import { faGraduationCap } from '@fortawesome/free-solid-svg-icons';
 
 import './TimeScale.css';
@@ -14,10 +13,6 @@ function MainIcon(props) {
     </div>
   );
 }
-
-MainIcon.propTypes = {
-  icon: PropTypes.string.isRequired,
-};
 
 const educationInfo = {
   icon: faGraduationCap,

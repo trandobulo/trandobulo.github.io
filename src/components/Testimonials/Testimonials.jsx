@@ -42,17 +42,15 @@ const Testimonials = () => {
       id === activeItem ? 'activeTestimonialsItem' : 'testimonialsItem';
 
     return (
-      <>
-        <div className={testimonialsClass()}>
-          <div className="testimonialsPhotoContainer">
-            <img className="testimonialsPhoto" src={photo} />
-          </div>
-          <div className="testimonialsTextContainer">
-            <i className="testimonialsText">{text}</i>
-            <i className="testimonialsAuthor">{`- ${author}`}</i>
-          </div>
+      <div className={testimonialsClass()} key={id}>
+        <div className="testimonialsPhotoContainer">
+          <img className="testimonialsPhoto" src={photo} />
         </div>
-      </>
+        <div className="testimonialsTextContainer">
+          <i className="testimonialsText">{text}</i>
+          <i className="testimonialsAuthor">{`- ${author}`}</i>
+        </div>
+      </div>
     );
   };
 
@@ -97,11 +95,9 @@ const Testimonials = () => {
           icon={faChevronCircleLeft}
           onClick={() => navigate('left')}
         />
-        <div className="testimonialsItemWrapper">
-          {items.map((item, index) => {
-            return itemTemplate(item.photo, item.text, item.author, index);
-          })}
-        </div>
+        {items.map((item, index) => {
+          return itemTemplate(item.photo, item.text, item.author, index);
+        })}
         <FontAwesomeIcon
           className="navChevrone"
           icon={faChevronCircleRight}
