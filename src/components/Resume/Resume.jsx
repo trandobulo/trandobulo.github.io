@@ -45,7 +45,7 @@ function Resume() {
     );
   }
 
-  const skills = [
+  const SKILLS = [
     { name: 'JavaScript', value: '50%' },
     { name: 'TypeScript', value: '20%' },
     { name: 'React', value: '40%' },
@@ -54,6 +54,9 @@ function Resume() {
     { name: 'HTML', value: '60%' },
     { name: 'CSS', value: '60%' },
     { name: 'Git', value: '40%' },
+    { name: 'Webpack', value: '20%' },
+    { name: 'Tailwind.css', value: '30%' },
+    { name: 'Express', value: '20%' },
   ];
 
   return (
@@ -61,7 +64,7 @@ function Resume() {
       <h1 className="title">My Resume</h1>
       <Switcher state={state} />
       {state.activeTab === '0' && <TimeScale />}
-      {state.activeTab === '1' && <SkillsScale skills={skills} />}
+      {state.activeTab === '1' && <SkillsScale skills={SKILLS} />}
     </div>
   );
 }
