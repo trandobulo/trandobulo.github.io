@@ -105,11 +105,47 @@ const AboutDetails = () => {
   );
 };
 
-const ABOUT_TEXT = `I am an enthusiastic and detail-oriented beginner Front-end Developer,
-seeking an entry position in a company, to use and improve my skills
-in commercial project development. While studying I&apos;m trying to
-have a deep understanding of every new technology and am always highly
-motivated to solve the unfamiliar complex tasks`;
+const ABOUT_TEXT = (
+  <>
+    <p>
+      I am a communicative, detail-oriented, and creative beginner Front-end
+      Developer. And I am seeking a junior position in a company, to use and
+      improve my skills, working hand-to-hand with experienced engineers in
+      commercial project development. My current experience is represented by
+      the following projects:
+    </p>
+    <ul>
+      <li>
+        SPA internet store with cart on React (class-based approach), using
+        GraphQL (Apollo) & React-Router. Working with state a lot, using Refs,
+        and lifecycle methods, I’ve sharped skills in reusing, refactoring, and
+        structuring code, including CSS with BEM
+      </li>
+      <li>
+        A notes app in three approaches: 1. Pure JS, 2. React + Redux on
+        TypeScript 3. Serverside app on Express.js on TypeScript. While doing
+        this app I’ve improved my understanding of DOM, and events, using the
+        MVC pattern and OOP paradigm. Also, got experience with Tailwind.css,
+        Storybook, and Postman.
+      </li>
+      <li>
+        Personal landing page on React (functional approach) with a contact form
+        connected to MailJS service and ReCaptcha. Simple animation, semantic
+        usage of HTML, usage of ESlint. Deployment on gh-pages
+      </li>
+      <li>
+        Job Board application on React (functional approach) using TypeScript,
+        Tailwind.css, React-Router, and Google Map API. Creating a responsive
+        design,
+      </li>
+    </ul>
+    <p>
+      Also I can read, understand and work with unfamiliar code. While studying
+      trying to have a deep understanding of every new technology and am always
+      highly motivated to solve the complex tasks
+    </p>
+  </>
+);
 
 function About() {
   return (
